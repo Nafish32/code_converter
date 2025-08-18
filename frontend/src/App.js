@@ -43,7 +43,8 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Code Converter</h1>
+                <h1>CodeMorph</h1>
+                <h3> Transform code <span>into</span> another form</h3>
             </header>
             <main>
                 <div className="converter-container">
