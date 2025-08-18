@@ -16,18 +16,18 @@ function App() {
         setConvertedCode('');
 
         try {
-            const response = await fetch('/api/v1/convert', {
+            const response = await fetch('/api/v1/convert', {//declares type of request
                 method: 'POST',
-                headers: {
+                headers: {//sending type of data in requestbody
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ sourceCode, targetLanguage }),
             });
 
-            if (!response.ok) {
+            if (!response.ok)
+            {
                 throw new Error('Something went wrong!');
             }
-
             const data = await response.text();
             // Remove markdown code block delimiters if present
             const cleanedCode = data.replace(/^```[\w]*\n?/, '').replace(/\n?```$/, '').trim();

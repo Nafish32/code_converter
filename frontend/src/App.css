@@ -10,12 +10,17 @@
 
 .converter-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
 }
 
 .code-editor {
-  width: 45%;
+  width: 40%;
+  min-width: 300px;
 }
 
 .code-editor h2 {
@@ -31,32 +36,70 @@ textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;
 }
 
 .controls {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  min-width: 200px;
+  width: 20%;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 select {
   padding: 10px;
   font-size: 1rem;
   margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 180px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 1rem;
   cursor: pointer;
   background-color: #61dafb;
   border: none;
   border-radius: 5px;
   color: #282c34;
+  width: 100%;
+  max-width: 180px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #21a9c7;
 }
 
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .converter-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .code-editor {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .controls {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 0;
+  }
 }
